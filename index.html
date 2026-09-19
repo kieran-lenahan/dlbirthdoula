@@ -8,6 +8,9 @@
 <meta property="og:title" content="Dana Lenahan | Birth Doula">
 <meta property="og:description" content="You deserve to feel empowered, loved, and in control in your pregnancy, birth, and motherhood journey.">
 <meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -180,11 +183,6 @@ header.docked .btn:hover{color:var(--clay)}
 .wave-b{animation:drift 41s linear infinite reverse;opacity:.55}
 @keyframes drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-.scroll-cue{
-  position:absolute;z-index:3;left:var(--edge);bottom:1.4rem;
-  font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;opacity:.7;
-}
-
 /* --- invitation list --- */
 .invite{background:var(--shell);text-align:center}
 .invite ul{list-style:none;margin:2.6rem auto 0;padding:0;max-width:52rem}
@@ -344,10 +342,14 @@ figcaption{
 
 /* --- contact --- */
 .contact{background:var(--sand)}
-.availability{background:var(--shell);border-left:3px solid var(--clay);
-              padding:1.15rem 1.35rem;margin-top:1.9rem;font-size:.95rem;line-height:1.7}
-.availability b{display:block;font-family:var(--display);font-weight:600;
-                font-size:1rem;color:var(--abyss);margin-bottom:.3rem}
+.availability{background:#FCEFBF;border:1px solid #E8C860;border-left:5px solid #D8A62C;
+              padding:1.25rem 1.45rem;margin-top:1.9rem;font-size:.95rem;line-height:1.7;
+              color:#4A3C14;box-shadow:0 2px 14px rgba(120,90,10,.10)}
+.availability b{display:flex;align-items:center;gap:.45rem;
+                font-family:var(--display);font-weight:600;font-size:1.02rem;
+                color:#5C4710;margin-bottom:.4rem}
+.availability b::before{content:"";flex:0 0 .55rem;height:.55rem;border-radius:50%;
+                        background:#D8A62C}
 .availability p{margin:0}
 .contact-grid{display:grid;gap:clamp(2rem,5vw,4rem)}
 @media(min-width:900px){.contact-grid{grid-template-columns:.9fr 1.1fr}}
@@ -430,7 +432,6 @@ footer a{color:var(--sand)}
         <a class="btn btn-ghost" href="#services">See how I support you</a>
       </div>
     </div>
-    <span class="scroll-cue" aria-hidden="true">Scroll</span>
   </section>
 
   <!-- FOR THE WOMEN WHO -->

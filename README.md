@@ -69,3 +69,23 @@ To add a testimonial, copy an existing `<figure>` block and change the text and 
 - Services are grouped **Before / During / After** because that's the real shape of the work.
 - Motion is limited to a slow wave drift and gentle scroll reveals; both respect
   `prefers-reduced-motion`.
+
+## Social preview image (OG image)
+
+`images/og.png` (1200×630) is what Facebook, iMessage, LinkedIn, and X show when
+someone shares a link. It is generated from `og-template.html`, not hand-designed,
+so it can be regenerated whenever the photo or tagline changes:
+
+```bash
+python3 -m http.server 8901          # from the repo root
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
+  --window-size=1200,630 --virtual-time-budget=6000 \
+  --screenshot="$PWD/images/og.png" "http://localhost:8901/og-template.html"
+```
+
+Edit `og-template.html` first if the wording or crop needs to change
+(`object-position` on the photo controls the crop).
+
+After deploying a new version, caches on Facebook and LinkedIn hold the old image —
+re-scrape at https://developers.facebook.com/tools/debug/ to force a refresh.
